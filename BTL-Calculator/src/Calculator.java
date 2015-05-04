@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.GridLayout;
 
 
 public class Calculator {
@@ -13,3 +14,4 @@ public calf(String title) {
 
 	cp = new CopyPaste();
 	setBackground(Color.orange);
+	setLayout(new GridLayout(1, 1));
