@@ -25,3 +25,11 @@ public calf(String title) {
 	menuitem1.addActionListener(this);
 	menuitem2 = new MenuItem("&Paste");
 	Menu1.add(menuitem2);
+	menuitem2.addActionListener(this);
+	menuitem3 = new MenuItem("&Exit");
+	Menu1.add(menuitem3);
+	menuitem3.addActionListener(this);
+	Menubar1.add(Menu1);
+	setMenuBar(Menubar1);
+
+	
