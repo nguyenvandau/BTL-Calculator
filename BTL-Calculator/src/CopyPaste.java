@@ -4,6 +4,9 @@ import java.awt.datatransfer.Transferable;
 
 public class CopyPaste implements ClipboardOwner {
 
+// interface ClipboardOwner chỉ rõ interface cho các class..
+// ..mà sẽ cung cấp data tới một clipboard.
+
 	Clipboard clip;
 	String ctxt;
 	
@@ -31,7 +34,8 @@ public class CopyPaste implements ClipboardOwner {
 		}
 
 	}
-
+	
+	// phương thức khai báo object này ko còn sở hữu clipboard nữa.
 	@Override
 	public void lostOwnership(Clipboard clipboard, Transferable contents) {
 		
