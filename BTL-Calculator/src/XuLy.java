@@ -20,5 +20,27 @@ public class XuLy {
 	public final int HANG_SO = -2;
 	public final int GIAI_THUA = -1;
 	
+	public void chon(boolean ra) {
+		this.ra = ra;
+	}
 	
+	public void setAns(double ans) {
+		this.ans = ans;
+	}
+	
+	public void setM(double m) {
+		this.m = m;
+	}
+	
+	public void xoaTatCa(){
+		nhap.clear();
+		bieuThuc.clear();
+		ketQua.clear();
+	}
+	
+	public void them(String s, int i){
+		DuLieu data = new DuLieu();
+		data.set(s, i);
+		nhap.push(data);
+	}
 }
