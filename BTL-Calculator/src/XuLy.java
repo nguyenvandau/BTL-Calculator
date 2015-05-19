@@ -65,11 +65,51 @@ public class XuLy {
 				s = s + t.peek().getGiaTri();
 				nhap.push(t.pop());
 			}
-			
+
 			return s;
 		}
-		
+
 	}
-	
-	
+
+	public double tinh() throws Exception {
+		if (bieuThuc.empty()){
+			throw new Exception();
+		}
+		
+		TinhToan tinhToan = new TinhToan();
+		Stack<DuLieu> tg = new Stack<DuLieu>();
+		
+		while (bieuThuc.empty() == false) {
+			tg.push(bieuThuc.pop());
+		}
+		
+		while (tg.empty() == false) {
+			try {
+				switch (tg.peek().getDanhDau()) {
+				case SO:
+					ketQua.push(tg.pop());
+					break;
+				case UU_TIEN_1:
+				case GIAI_THUA:
+					DuLieu d1 = new DuLieu();
+					double tt1 = tinhToan.tinh(tg.pop().getGiaTri(), Double.parseDouble(ketQua.pop().getGiaTri()), ra);
+					d1.set(String.valueOf(tt1), 0);
+					ketQua.push(d1);
+					break;
+				case UU_TIEN_2:
+				case UU_TIEN_3:
+				case UU_TIEN_4:
+					DuLieu d2 = new DuLieu();
+					double tt2 = tinhToan.tinh(tg.pop().getGiaTri(), Double.parseDouble(ketQua.pop().getGiaTri()), Double.parseDouble(ketQua.pop().getGiaTri()));
+					d2.set(String.valueOf(tt2), SO);
+					ketQua.push(d2);
+					break;
+				default: throw new Exception();
+				}
+			} catch (Exception e){
+				throw new Exception();
+			}
+		}
+		return Double.parseDouble(ketQua.pop().getGiaTri());
+	}
 }
