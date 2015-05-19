@@ -72,17 +72,17 @@ public class XuLy {
 	}
 
 	public double tinh() throws Exception {
-		if (bieuThuc.empty()){
+		if (bieuThuc.empty()) {
 			throw new Exception();
 		}
-		
+
 		TinhToan tinhToan = new TinhToan();
 		Stack<DuLieu> tg = new Stack<DuLieu>();
-		
+
 		while (bieuThuc.empty() == false) {
 			tg.push(bieuThuc.pop());
 		}
-		
+
 		while (tg.empty() == false) {
 			try {
 				switch (tg.peek().getDanhDau()) {
@@ -92,7 +92,8 @@ public class XuLy {
 				case UU_TIEN_1:
 				case GIAI_THUA:
 					DuLieu d1 = new DuLieu();
-					double tt1 = tinhToan.tinh(tg.pop().getGiaTri(), Double.parseDouble(ketQua.pop().getGiaTri()), ra);
+					double tt1 = tinhToan.tinh(tg.pop().getGiaTri(),
+							Double.parseDouble(ketQua.pop().getGiaTri()), ra);
 					d1.set(String.valueOf(tt1), 0);
 					ketQua.push(d1);
 					break;
@@ -100,16 +101,156 @@ public class XuLy {
 				case UU_TIEN_3:
 				case UU_TIEN_4:
 					DuLieu d2 = new DuLieu();
-					double tt2 = tinhToan.tinh(tg.pop().getGiaTri(), Double.parseDouble(ketQua.pop().getGiaTri()), Double.parseDouble(ketQua.pop().getGiaTri()));
+					double tt2 = tinhToan.tinh(tg.pop().getGiaTri(),
+							Double.parseDouble(ketQua.pop().getGiaTri()),
+							Double.parseDouble(ketQua.pop().getGiaTri()));
 					d2.set(String.valueOf(tt2), SO);
 					ketQua.push(d2);
 					break;
-				default: throw new Exception();
+				default:
+					throw new Exception();
 				}
-			} catch (Exception e){
+			} catch (Exception e) {
 				throw new Exception();
 			}
 		}
 		return Double.parseDouble(ketQua.pop().getGiaTri());
+	}
+
+	public void hauTo() throws Exception {
+		if (nhap.empty()) {
+			throw new Exception();
+		}
+
+		Stack<DuLieu> tg = new Stack<DuLieu>();
+
+		while (nhap.empty() == false) {
+			tg.push(nhap.pop());
+		}
+
+		String s = new String("");
+		Stack<DuLieu> phepTinh = new Stack<DuLieu>();
+
+		while (tg.empty() == false) {
+			switch (tg.peek().getDanhDau()) {
+
+			case SO:
+				s = s + tg.pop().getGiaTri();
+				break;
+
+			case UU_TIEN_1:
+				phepTinh.push(tg.pop());
+				break;
+
+			case UU_TIEN_2:
+				if (s.equals("") == false) {
+					DuLieu d1 = new DuLieu();
+					d1.set(s, SO);
+					bieuThuc.push(d1);
+					s = "";
+				}
+				while (phepTinh.empty() == false) {
+					if (phepTinh.peek().getDanhDau() < tg.peek().getDanhDau()) {
+						bieuThuc.push(phepTinh.pop());
+					} else
+						break;
+				}
+				phepTinh.push(tg.pop());
+				break;
+
+			case UU_TIEN_3:
+
+			case UU_TIEN_4:
+				if (s.equals("") == false) {
+					DuLieu d4 = new DuLieu();
+					d4.set(s, SO);
+					bieuThuc.push(d4);
+					s = "";
+				}
+				while (phepTinh.empty() == false) {
+					if (phepTinh.peek().getDanhDau() <= tg.peek().getDanhDau()) {
+						bieuThuc.push(phepTinh.pop());
+					} else
+						break;
+				}
+				phepTinh.push(tg.pop());
+				break;
+
+			case MO_NGOAC:
+				if (s.equals("") == false) {
+					DuLieu d2 = new DuLieu();
+					d2.set(s, SO);
+					bieuThuc.push(d2);
+					s = "";
+				}
+				phepTinh.push(tg.pop());
+				break;
+
+			case DONG_NGOAC:
+				if (s.equals("") == false) {
+					DuLieu d4 = new DuLieu();
+					d4.set(s, SO);
+					bieuThuc.push(d4);
+					s = "";
+				}
+				while (phepTinh.empty() == false) {
+					if (phepTinh.peek().getDanhDau() != MO_NGOAC) {
+						bieuThuc.push(phepTinh.pop());
+					} else {
+						phepTinh.pop();
+						break;
+					}
+				}
+				tg.pop();
+				break;
+
+			case GIAI_THUA:
+				if (s.equals("") == false) {
+					DuLieu d4 = new DuLieu();
+					d4.set(s, SO);
+					bieuThuc.push(d4);
+					s = "";
+				}
+				bieuThuc.push(tg.pop());
+				break;
+
+			case HANG_SO:
+				if (s.equals("") == false) {
+					DuLieu d3 = new DuLieu();
+					d3.set(s, SO);
+					bieuThuc.push(d3);
+					s = "";
+				}
+				if (tg.peek().getGiaTri().equals("pi")) {
+					s = String.valueOf(Math.PI);
+					DuLieu d4 = new DuLieu();
+					d4.set(s, SO);
+					bieuThuc.push(d4);
+					s = "";
+				}
+				if (tg.peek().getGiaTri().equals("e")) {
+					s = String.valueOf(Math.E);
+					DuLieu d4 = new DuLieu();
+					d4.set(s, SO);
+					bieuThuc.push(d4);
+					s = "";
+				}
+				if (tg.peek().getGiaTri().equals("Ans")) {
+					s = String.valueOf(this.ans);
+					DuLieu d4 = new DuLieu();
+					d4.set(s, SO);
+					bieuThuc.push(d4);
+					s = "";
+				}
+				if (tg.peek().getGiaTri().equals("M")) {
+					s = String.valueOf(this.m);
+					DuLieu d4 = new DuLieu();
+					d4.set(s, SO);
+					bieuThuc.push(d4);
+					s = "";
+				}
+				tg.pop();
+			}
+		}
 	}
 }
