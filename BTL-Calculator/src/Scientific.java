@@ -116,6 +116,85 @@ public class Scientific extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jButton1.setText("jButton1");
         
+        number0.setFont(new java.awt.Font("Arial", 1, 12)); 
+        number0.setText("0");
+        number0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number0ActionPerformed(evt);
+            }
+        });
+        
+        number1.setFont(new java.awt.Font("Arial", 1, 12)); 
+        number1.setText("1");
+        number1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number1ActionPerformed(evt);
+            }
+        });
+        
+        number2.setFont(new java.awt.Font("Arial", 1, 12)); 
+        number2.setText("2");
+        number2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number2ActionPerformed(evt);
+            }
+        });
+        
+        number3.setFont(new java.awt.Font("Arial", 1, 12)); 
+        number3.setText("3");
+        number3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number3ActionPerformed(evt);
+            }
+        });
+        
+        number4.setFont(new java.awt.Font("Arial", 1, 12)); 
+        number4.setText("4");
+        number4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number4ActionPerformed(evt);
+            }
+        });
+        
+        number5.setFont(new java.awt.Font("Arial", 1, 12)); 
+        number5.setText("5");
+        number5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number5ActionPerformed(evt);
+            }
+        });
+        
+        number6.setFont(new java.awt.Font("Arial", 1, 12)); 
+        number6.setText("6");
+        number6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number6ActionPerformed(evt);
+            }
+        });
+        
+        number7.setFont(new java.awt.Font("Arial", 1, 12)); 
+        number7.setText("7");
+        number7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number7ActionPerformed(evt);
+            }
+        });
+        
+        number8.setFont(new java.awt.Font("Arial", 1, 12));
+        number8.setText("8");
+        number8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number8ActionPerformed(evt);
+            }
+        });
+        
+        number9.setFont(new java.awt.Font("Arial", 1, 12)); 
+        number9.setText("9");
+        number9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                number9ActionPerformed(evt);
+            }
+        });
         
         
         
