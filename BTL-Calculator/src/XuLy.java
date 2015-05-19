@@ -252,5 +252,14 @@ public class XuLy {
 				tg.pop();
 			}
 		}
+		if (s.equals("") == false) {
+			DuLieu d4 = new DuLieu();
+			d4.set(s, SO);
+			bieuThuc.push(d4);
+			s = "";
+		}
+		while (phepTinh.empty() == false) {
+			bieuThuc.push(phepTinh.pop());
+		}
 	}
 }
