@@ -1,10 +1,16 @@
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.swing.*;
+
+
+
 public class Standard extends javax.swing.JFrame {
 
 	private XuLy xuLy = new XuLy();
 	private double ans = 0;
 	private double m = 0;
-	
+
 	private JButton nhan;
 	private JButton chia;
 	private JButton tru;
@@ -30,7 +36,11 @@ public class Standard extends javax.swing.JFrame {
 	private JButton xoa;
 	private JButton CE;
 	private JTextArea hienThi;
-
+	private javax.swing.JMenuBar jMenuBar1;
+	private javax.swing.JMenuItem jMenuItem2;
+	private javax.swing.JScrollPane jScrollPane1;
+	private javax.swing.JMenu view;
+	private javax.swing.JMenuItem scientific;
 	public Standard() {
 
 		chia = new JButton();
@@ -58,7 +68,10 @@ public class Standard extends javax.swing.JFrame {
 		CE = new JButton();
 		xoa = new JButton();  
 		hienThi = new JTextArea();
-
+		jMenuBar1 = new javax.swing.JMenuBar();
+		view = new javax.swing.JMenu();
+		jMenuItem2 = new javax.swing.JMenuItem();
+		scientific = new javax.swing.JMenuItem();
 
 
 		chia.setFont(new java.awt.Font("Arial", 1, 12)); 
@@ -242,11 +255,43 @@ public class Standard extends javax.swing.JFrame {
 				CEActionPerformed(evt);
 			}
 		});
+		view.setBackground(new java.awt.Color(0, 0, 0));
+		view.setText("View");
+		view.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				viewActionPerformed(evt);
+			}
+		});
 
+		jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.ALT_MASK));
+		jMenuItem2.setBackground(new java.awt.Color(0, 0, 0));
+		jMenuItem2.setText("Standard");
+		jMenuItem2.setSelected(true);
+		jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem2ActionPerformed(evt);
+			}
+		});
+		view.add(jMenuItem2);
+
+		scientific.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.ALT_MASK));
+		scientific.setBackground(new java.awt.Color(0, 0, 0));
+		scientific.setText("Scientific");
+		scientific.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				scientificActionPerformed(evt);
+			}
+		});
+		view.add(scientific);
+
+		jMenuBar1.add(view);
+
+		setJMenuBar(jMenuBar1);
 		hienThi.setEditable(false);
 		hienThi.setColumns(20);
 		hienThi.setFont(new java.awt.Font("Times New Roman", 1, 20)); 
 		hienThi.setRows(2);
+		jScrollPane1.setViewportView(hienThi);
 	}
 
 
@@ -255,7 +300,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 	private void chiaActionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,7 +308,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 	private void truActionPerformed(java.awt.event.ActionEvent evt) {
@@ -271,7 +316,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 	private void congActionPerformed(java.awt.event.ActionEvent evt) {
@@ -279,7 +324,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 	private void number0ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -287,7 +332,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 	private void number1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -295,7 +340,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 	private void number2ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -303,7 +348,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 	private void number3ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -311,7 +356,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 	private void number4ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -319,7 +364,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 	private void number5ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -327,7 +372,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 	private void number6ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -335,7 +380,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
@@ -344,7 +389,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
@@ -353,7 +398,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
@@ -362,7 +407,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 	private void ketQuaActionPerformed(java.awt.event.ActionEvent evt) {
@@ -383,7 +428,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
@@ -407,7 +452,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
@@ -430,7 +475,7 @@ public class Standard extends javax.swing.JFrame {
 		try {
 			hienThi.setText(xuLy.hienThi());
 		} catch (Exception ex) {
-
+			Logger.getLogger(Scientific.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
@@ -447,5 +492,15 @@ public class Standard extends javax.swing.JFrame {
 			hienThi.setText("");
 		}
 	}
+	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
+	}
 
+	private void viewActionPerformed(java.awt.event.ActionEvent evt) {
+	}
+
+	private void scientificActionPerformed(java.awt.event.ActionEvent evt) {
+		Scientific scientific = new Scientific();
+		setVisible(false);
+		scientific.setVisible(true);
+	}
 }
