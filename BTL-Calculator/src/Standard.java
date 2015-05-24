@@ -73,13 +73,16 @@ public class Standard extends javax.swing.JFrame {
 		CE = new JButton();
 		xoa = new JButton();  
 		hienThi = new JTextArea();
-		jMenuBar1 = new javax.swing.JMenuBar();
-		view = new javax.swing.JMenu();
-		jMenuItem2 = new javax.swing.JMenuItem();
-		scientific = new javax.swing.JMenuItem();
+		jMenuBar1 = new JMenuBar();
+		view = new JMenu();
+		jMenuItem2 = new JMenuItem();
+		scientific = new JMenuItem();
 		jScrollPane1 = new JScrollPane();
 
-		 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setTitle("Scientific Calculator");
+        	setResizable(false);
+        	setLocation(700, 110);
 		
 		chia.setFont(new java.awt.Font("Arial", 1, 12)); 
 		chia.setText("/");
