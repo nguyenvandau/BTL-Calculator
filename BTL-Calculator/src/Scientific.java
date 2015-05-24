@@ -4,7 +4,6 @@ import java.util.logging.Logger;
 import javax.swing.*;
 
 
-
 public class Scientific extends javax.swing.JFrame {
 
     XuLy xuLy = new XuLy();
@@ -470,7 +469,13 @@ public class Scientific extends javax.swing.JFrame {
                 jMenu1ActionPerformed(evt);
             }
         });
-        
+        standard.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.ALT_MASK));
+        standard.setText("Standard");
+        standard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                standardActionPerformed(evt);
+            }
+        });
         jMenu1.add(standard);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.ALT_MASK));
@@ -992,6 +997,13 @@ public class Scientific extends javax.swing.JFrame {
         m--;
         xuLy.setM(m);
     }
+    private void standardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standardActionPerformed
+        Standard standard = new Standard();
+        setVisible(false);
+        standard.setVisible(true);
+    }
+    
+    
     public static void main(String args[]) {
         // Set the Nimbus look and feel
       
