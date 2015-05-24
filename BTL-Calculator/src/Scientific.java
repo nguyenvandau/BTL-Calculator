@@ -121,7 +121,10 @@ public class Scientific extends javax.swing.JFrame {
         jMenuItem1 = new JMenuItem();
         jButton1.setText("jButton1");
         
-
+	setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Scientific Calculator");
+        setResizable(false);
+        setLocation(700, 110);
 
 		chia.setFont(new java.awt.Font("Arial", 1, 12)); 
 		chia.setText("/");
