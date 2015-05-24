@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 import javax.swing.*;
 
 
+
 public class Scientific extends javax.swing.JFrame {
 
     XuLy xuLy = new XuLy();
@@ -62,6 +63,10 @@ public class Scientific extends javax.swing.JFrame {
     private JButton xoaTungSo;  
     
     public Scientific() {
+    	  initComponents();
+    }
+
+    private void initComponents() {
      
     	chia = new JButton();
 		nhan = new JButton();
@@ -987,6 +992,31 @@ public class Scientific extends javax.swing.JFrame {
         m--;
         xuLy.setM(m);
     }
-
+    public static void main(String args[]) {
+        // Set the Nimbus look and feel
+      
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Scientific.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Scientific.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Scientific.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Scientific.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //Create and display the form
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Scientific().setVisible(true);
+            }
+        });
+    }
    
     }

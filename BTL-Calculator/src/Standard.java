@@ -43,6 +43,10 @@ public class Standard extends javax.swing.JFrame {
 	private JMenuItem scientific;
 	
 	public Standard() {
+		  initComponents();
+    }
+
+    private void initComponents() {
 
 		chia = new JButton();
 		nhan = new JButton();
@@ -73,8 +77,10 @@ public class Standard extends javax.swing.JFrame {
 		view = new javax.swing.JMenu();
 		jMenuItem2 = new javax.swing.JMenuItem();
 		scientific = new javax.swing.JMenuItem();
+		jScrollPane1 = new JScrollPane();
 
-
+		 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		
 		chia.setFont(new java.awt.Font("Arial", 1, 12)); 
 		chia.setText("/");
 		chia.addActionListener(new java.awt.event.ActionListener() {
@@ -263,6 +269,11 @@ public class Standard extends javax.swing.JFrame {
 				viewActionPerformed(evt);
 			}
 		});
+		hienThi.setEditable(false);
+		hienThi.setColumns(20);
+		hienThi.setFont(new java.awt.Font("Times New Roman", 1, 20)); 
+		hienThi.setRows(2);
+		jScrollPane1.setViewportView(hienThi);
 
 		jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.ALT_MASK));
 		jMenuItem2.setBackground(new java.awt.Color(0, 0, 0));
@@ -288,11 +299,8 @@ public class Standard extends javax.swing.JFrame {
 		jMenuBar1.add(view);
 
 		setJMenuBar(jMenuBar1);
-		hienThi.setEditable(false);
-		hienThi.setColumns(20);
-		hienThi.setFont(new java.awt.Font("Times New Roman", 1, 20)); 
-		hienThi.setRows(2);
-		jScrollPane1.setViewportView(hienThi);
+		
+		
 		
 		GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
